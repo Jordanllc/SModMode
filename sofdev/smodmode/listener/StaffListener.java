@@ -9,18 +9,20 @@ import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import sofdev.smodmode.Main;
 import sofdev.smodmode.messages.Messages;
-import sofdev.smodmode.util.CC;
 
-/*
-    Created by SofDev w/Apreciada
-    14/06/2022 - 02:52:27
+
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
  */
 
 public class StaffListener implements Listener {
 
-    Main main;
-
-    /* STAFF JOIN */
+    /**
+     * Staff Join
+     *
+     * Sends a message when a {@link Player} joins
+     */
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
@@ -33,19 +35,13 @@ public class StaffListener implements Listener {
                 }
             }
         }
-
-        /*
-        if (p.getUniqueId().equals("79ba36c-f2c1-4ad1-a354-4fa1ed9ecc27")) {
-            p.sendMessage(CC.translate("&cThis server is using SModMode!"));
-        }
-         */
     }
 
-    /* STAFF JOIN */
-
-    /* -------------------------------------- */
-
-    /* STAFF LEAVE*/
+    /**
+     * Staff Leave
+     *
+     * Sends a message when a {@link Player} leaves
+     */
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e) {
@@ -59,11 +55,11 @@ public class StaffListener implements Listener {
         }
     }
 
-    /* STAFF LEAVE */
-
-    /* ------------------------------------ */
-
-    /* STAFF KICK */
+    /**
+     * Staff Kicked
+     *
+     * Send the {@link PlayerQuitEvent} message
+     */
 
     @EventHandler
     public void onPlayerKick(PlayerKickEvent e) {

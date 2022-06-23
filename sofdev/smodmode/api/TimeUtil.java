@@ -1,5 +1,10 @@
 package sofdev.smodmode.api;
 
+
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
+ */
 public class TimeUtil {
     public static String formatTimeMillis(long millis) {
         long seconds = millis / 1000L;

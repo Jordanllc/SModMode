@@ -10,7 +10,6 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.metadata.FixedMetadataValue;
 import sofdev.smodmode.Main;
 import sofdev.smodmode.messages.Messages;
 import sofdev.smodmode.util.CC;
@@ -18,6 +17,11 @@ import sofdev.smodmode.util.CC;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
+ */
 public class ModModeManager {
 
     public static void GiveModModeItems(Player p) {
@@ -146,13 +150,5 @@ public class ModModeManager {
 
     public static boolean IsVanished(Player p) {
         return Main.vanished.contains(p);
-    }
-
-    public static void setModBar(Player p, Boolean b) {
-        if (b) {
-            p.setMetadata("modactionbar", new FixedMetadataValue(Main.get(), "2"));
-        } else {
-            p.removeMetadata("modactionbar", Main.get());
-        }
     }
 }

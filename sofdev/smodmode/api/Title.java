@@ -5,6 +5,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.json.simple.JSONObject;
 
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
+ */
+
 public class Title {
 
     @Deprecated

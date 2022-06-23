@@ -1,3 +1,58 @@
 config:
   buildmode: true
   no-perm: '&cNo permission!'
+  staffmode: '&cYou need staffmode to do this.'
+  gamemode: "&cYou can't change your gamemode"
+
+Titles:
+  BuildMode:
+    Normal: "&bBuild Mode"
+    Enabled: "&aHas been Enabled"
+    Disabled: "&cHas been Disabled"
+
+  StaffMode:
+    Normal: "&bStaff Mode"
+    Enabled: "&aHas been Enabled"
+    Disabled: "&cHas been Disabled"
+
+  Vanish:
+    Normal: "&bVanish"
+    Enabled: "&aHas been Enabled"
+    Disabled: "&cHas been Disabled"
+
+Messages:
+  Staff:
+    Leave: '&3[&bStaff&3] &a%player% &bLeft'
+    Join: '&3[&bStaff&3] &a%player% &bJoin'
+
+  StaffChat:
+    Enabled: '&7[&bStaffChat&7] &aHas been Enabled'
+    Disabled: '&7[&bStaffChat&7] &cHas been Disabled'
+    Format: '&7[&bSC&7] &3%player%: &b%message%'
+
+  PluginInfo:
+    Info1:
+      - ''
+      - '&b&l&k||&6 SModMode &b&l&k||'
+      - ''
+      - '&b&k|&6 ➥ &dAuthor: &5LSoofiaa / Apreciada &b&k|'
+      - '&b&k|&6 ➥ &dVersion: &f%version% &b&k|'
+      - ''
+
+    Info2:
+      - ''
+      - '&b&l&k||&6 Commands &b&l&k||'
+      - ''
+      - '&b&k|&6 ➥ /staff &7(/mod, /staffmode) &b&k|'
+      - '&b&k|&6 ➥ /staffchat &7(/sc) &b&k|'
+      - '&b&k|&6 ➥ /build &b&k|'
+      - ''
+
+    Info3:
+      - ''
+      - '&b&l&k||&6 Permissions &b&l&k||'
+      - ''
+      - '&b&k|&6 ➥ /staff = &fsmodmode.staff &b&k|'
+      - '&b&k|&6 ➥ /staffchat = &fsmodmode.staff &b&k|'
+      - '&b&k|&6 ➥ /build = &fsmodmode.admin &b&k|'
+      - ''

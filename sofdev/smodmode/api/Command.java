@@ -1,18 +1,17 @@
 package sofdev.smodmode.api;
 
-import org.bukkit.ChatColor;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
+ */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Command {
-
-	String noPm = ChatColor.RED + "No permission!";
-
 	public String name();
 
 	public String permission() default "";

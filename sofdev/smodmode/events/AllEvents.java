@@ -23,9 +23,9 @@ import sofdev.smodmode.util.CC;
 import java.util.ArrayList;
 import java.util.List;
 
-/*
-    Created by SofDev w/Apreciada
-    14/06/2022 - 02:52:27
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
  */
 
 public class AllEvents implements Listener {
@@ -180,10 +180,13 @@ public class AllEvents implements Listener {
     @EventHandler
     public void onChat(AsyncPlayerChatEvent e) {
         Player p = e.getPlayer();
+        String format = Main.get().getConfig().getString("Messages.StaffChat.Format");
 
         if (Main.staffchat.contains(p)) {
             for (Player staffs : Bukkit.getServer().getOnlinePlayers()) {
-                staffs.sendMessage(CC.translate("&7[&BSC&7] " + ChatColor.DARK_AQUA + p.getName() + ChatColor.GRAY + ": " + ChatColor.AQUA + e.getMessage()));
+                staffs.sendMessage(CC.translate(format
+                .replace("%player%", p.getName()
+                .replace("%message%", e.getMessage()))));
                 e.setCancelled(true);
             }
         }
@@ -192,11 +195,9 @@ public class AllEvents implements Listener {
     @EventHandler
     public void onDeath(PlayerDeathEvent e) {
         Player p = e.getEntity();
-        Location l = p.getLocation();
 
         if (Main.staff.contains(p)) {
             p.performCommand("staff");
-            p.getWorld().strikeLightningEffect(l);
             e.getDrops().clear();
             respawn.add(p);
             if (vanished.contains(p)) {
@@ -208,9 +209,11 @@ public class AllEvents implements Listener {
     @EventHandler
     public void gamemode(PlayerGameModeChangeEvent e) {
         Player p = e.getPlayer();
-
-        if (e.getNewGameMode().equals(GameMode.SURVIVAL) && e.getNewGameMode().equals(GameMode.ADVENTURE) && e.getNewGameMode().equals(GameMode.SPECTATOR)) {
-            p.setAllowFlight(true);
+        if (e.getNewGameMode() == GameMode.SURVIVAL ||
+        e.getNewGameMode() == GameMode.ADVENTURE ||
+        e.getNewGameMode() == GameMode.SPECTATOR) {
+            p.sendMessage(CC.translate(Main.get().getConfig().getString("config.gamemode")));
+            p.setGameMode(GameMode.CREATIVE);
         }
     }
 
@@ -219,6 +222,7 @@ public class AllEvents implements Listener {
         Player p = e.getPlayer();
 
         if (respawn.contains(p)) {
+            respawn.remove(p);
             p.performCommand("staff");
         }
     }

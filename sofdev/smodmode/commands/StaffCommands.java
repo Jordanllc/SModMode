@@ -20,9 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/*
-    Created by SofDev w/Apreciada
-    14/06/2022 - 02:52:27
+/**
+ * Created by SofDev w/Apreciada
+ * 14/06/2022 - 02:52:27
  */
 
 public class StaffCommands {
@@ -95,7 +95,7 @@ public class StaffCommands {
                 Main.vanished.add(p);
             }
         } else {
-            p.sendMessage(CC.translate("&cYou aren't on ModMode"));
+            p.sendMessage(CC.translate(Main.get().getConfig().getString("config.staffmode")));
         }
     }
 
@@ -122,10 +122,10 @@ public class StaffCommands {
         Player p = (Player) args.getSender();
 
         if (!Main.staffchat.contains(p)) {
-            p.sendMessage(CC.translate("&7[&bStaffChat&7] &aHas been Enabled"));
+            p.sendMessage(CC.translate(Main.get().getConfig().getString("Messages.StaffChat.Enabled")));
             Main.staffchat.add(p);
         } else {
-            p.sendMessage(CC.translate("&7[&bStaffChat&7] &4Has been Disabled"));
+            p.sendMessage(CC.translate(Main.get().getConfig().getString("Messages.StaffChat.Disabled")));
             Main.staffchat.remove(p);
         }
     }
@@ -144,7 +144,7 @@ public class StaffCommands {
                     Messages.titleBuildOn(p);
                 }
             } else {
-                p.sendMessage(ChatColor.DARK_RED + "You aren't on staff mode!");
+                p.sendMessage(CC.translate(Main.get().getConfig().getString("config.staffmode")));
             }
         } else {
             Messages.noPermission(p);
@@ -163,7 +163,7 @@ public class StaffCommands {
             randomTP.send(p);
             p.teleport(rp.getLocation());
         } else {
-            p.sendMessage(CC.translate("&cYou cant do this while normal mode."));
+            p.sendMessage(CC.translate(Main.get().getConfig().getString("config.staffmode")));
         }
     }
 

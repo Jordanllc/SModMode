@@ -16,14 +16,14 @@ import sofdev.smodmode.listener.StaffListener;
 import sofdev.smodmode.util.CC;
 
 import java.io.File;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-/*
-    Created by SofDev w/Apreciada
-    14/06/2022 - 02:52:27
+
+/**
+ *  Created by SofDev w/Apreciada
+ *  14/06/2022 - 02:52:27
  */
 
 public class Main extends JavaPlugin {
@@ -37,7 +37,7 @@ public class Main extends JavaPlugin {
     }
 
     FileConfiguration config = this.getConfig();
-    PluginDescriptionFile pdffile = getDescription();
+    public PluginDescriptionFile pdffile = getDescription();
     public static HashMap<UUID, ItemStack[]> pArmor = new HashMap<UUID, ItemStack[]>();
     public static HashMap<UUID, ItemStack[]> pItems = new HashMap<UUID, ItemStack[]>();
     public static Main plugin;
@@ -79,18 +79,11 @@ public class Main extends JavaPlugin {
                     if (staff.contains(staffs)) {
                         ActionBar.sendActionBar(staffs, CC.translate("&3&m  &b Staff Mode &3&m  "));
                     }
-
-                    if (vanished.contains(staffs)) {
-                        ActionBar.sendActionBar(staffs, CC.translate("&3&m  &b Staff Mode &7&m|&b Vanished &3&m  "));
-                    } else {
-                        ActionBar.sendActionBar(staffs, CC.translate("&3&m  &b Staff Mode &7&m|&b UnVanished &3&m  "));
-                    }
                 }
             }
         }, 0L, 5L);
         framework = new CommandFramework(this);
         framework.registerCommands(new StaffCommands(this));
-        framework.registerCommands(this);
     }
 
     public void msgApagar() {
