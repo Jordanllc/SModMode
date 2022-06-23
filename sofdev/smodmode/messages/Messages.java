@@ -103,6 +103,5 @@ public class Messages implements Listener {
         p.sendMessage(CC.translate("&b&k|&6 -> /staffchat = &fsmodmode.staff &b&k|"));
         p.sendMessage(CC.translate("&b&k|&6 -> /build = &fsmodmode.admin &b&k|"));
         p.sendMessage(CC.translate(" "));
-        p.spigot().sendMessage(ownclear);
     }
 }
