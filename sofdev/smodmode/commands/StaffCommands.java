@@ -21,19 +21,25 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by SofDev w/Apreciada
- * 14/06/2022 - 02:52:27
+ * @author SofDev w/Apreciada
+ * @since 14/06/2022 - 02:52:27
  */
+
+/**
+* Trata de organizar un poco mas el codigo
+* poniendo tags entre otras cosas, estare revisando y mejorando un poco.
+*/
 
 public class StaffCommands {
 
+    //Main code
     private Main main;
 
     public StaffCommands(Main core) {
         this.main = core;
     }
 
-
+    //list of all commands in this file
     @Command(name = "vanish", aliases = {"v"}, permission = "smodmode.staff", inGameOnly = true)
     public void vanish(CommandArgs args) {
         Player p = (Player) args.getSender();
@@ -70,9 +76,9 @@ public class StaffCommands {
             } else {
                 List<String> Lore = new ArrayList<String>();
                 Lore.add(" ");
-                Lore.add(CC.translate("&3&l★ &dStaff - Item &3&l★"));
-                Lore.add(CC.translate("&3&l★ &dThis item has been given to &3&l★"));
-                Lore.add(CC.translate("&3&l★ &dStaff: &6&l&n" + p.getName()));
+                Lore.add(CC.translate("&dStaff - Item &3&l★"));
+                Lore.add(CC.translate("&dThis item has been given to &3&l★"));
+                Lore.add(CC.translate("&dStaff: &6&l&n" + p.getName()));
                 Lore.add(" ");
 
                 @SuppressWarnings("deprecation")
@@ -214,7 +220,7 @@ public class StaffCommands {
                 }
             }
         } else {
-            p.sendMessage(CC.translate("&cUsage: /checkvanished (player)"));
+            p.sendMessage(CC.translate("&cUsage: /checkvanished <player>"));
         }
     }
 }
